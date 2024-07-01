@@ -24,4 +24,5 @@ export const WrapperHeaderAccout = styled.div`
 export const WrapperTextHeaderSmall = styled.span`
   font-size: 12px;
   color: #fff;
+  white-space: nowrap;
 `;
