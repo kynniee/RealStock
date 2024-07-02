@@ -30,7 +30,7 @@ export const WrapperPriceTextProduct = styled.h1`
 font-size: 32px;
 line-height:40px;
 font-weight: 500;
-margin-right: 8px
+margin-right: 8px;
 padding: 10px;
 margin-top: 10px;
 `;
@@ -42,7 +42,7 @@ export const WrapperAddessProduct = styled.div`
     font-weight: 500;
     white-space: nowrap;
     overfow: hidden;
-    text-overflow: ellipsisl;
+    text-overflow: ellipsis;
   }
   span.change-address {
     color: rgb(11, 116, 229);
@@ -51,22 +51,20 @@ export const WrapperAddessProduct = styled.div`
     font-weight: 500;
   }
 `;
-export const WrapperQualityProduct = styled.h1`
+export const WrapperQualityProduct = styled.div`
   display: flex;
   gap: 4px;
   align-item: center;
   border: 1px solid #ccc;
   width: 100px;
+  border-radius: 4px;
 `;
-export const WrapperBtnQualityProduct = styled.span`
-    border: 1px solid #ccc;
-    
 
-`;
 export const WrapperInputNumber = styled(InputNumber)`
   &.ant-input-number.ant-input-number-sm {
     width: 50px;
-    boder-top:none;
-    boder-bottom:none;
+    border-top: none;
+    border-bottom: none;
   }
 `;
+

@@ -7,8 +7,6 @@ import slider2 from "../../assets/images/slider2.png";
 import slider3 from "../../assets/images/slider3.png";
 import slider4 from "../../assets/images/slider4.png";
 import CardComponent from "../../components/CardComponent/CardComponent";
-import NavBarComponent from "../../components/NavBarComponent/NavBarComponent";
-import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import { WrapperButtonMore, WrapperProducts } from "../../components/NavBarComponent/style";
 
 const HomePage = () => {
@@ -59,7 +57,7 @@ const HomePage = () => {
               height: " 38px",
               borderRadius: "4px",
             }}
-            styleTextButton={{ fontWeight: 500 }}
+            styleTextButton ={{ fontWeight: '500'  }}
           />
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { Button } from "antd";
 import styled from "styled-components";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
@@ -36,6 +35,7 @@ export const WrapperButtonMore = styled(ButtonComponent)`
     }
     width: 100%;
     text-align: center;
+    font-weight: 500;
 `
 export const WrapperProducts = styled.div`
   display: flex;
