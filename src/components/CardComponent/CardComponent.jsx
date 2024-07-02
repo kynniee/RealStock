@@ -5,6 +5,7 @@ import {
   WrapperDiscountText,
   WrapperPriceText,
   WrapperReporText,
+  WrapperStyleTextSell,
 } from "./style";
 import { StarFilled } from "@ant-design/icons";
 import hang from "../../assets/images/hang.png";
@@ -40,7 +41,7 @@ const CardComponent = () => {
           <span> 4.91</span>
           <StarFilled style={{ fontSize: "12px", color: "#fbd322" }} />
         </span>
-        <span> | da ban 999+</span>
+        <WrapperStyleTextSell> | da ban 999+</WrapperStyleTextSell>
       </WrapperReporText>
       <WrapperPriceText>
         100.000.000d

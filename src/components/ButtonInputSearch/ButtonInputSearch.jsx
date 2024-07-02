@@ -41,7 +41,7 @@ const ButtonInputSearch = (props) => {
         textButton= {textButton}
         styleTextButton= {{color: colorButton}}
         icon={<SearchOutlined color=  {colorButton} style={{color:"#fff"}}/>}
-      />
+      />  
    </div>
   );
 };
