@@ -1,3 +1,6 @@
+import ProductsDetailsPage from "../components/ProductsDetailsPage/ProductsDetailsPage";
+import SignInPage from "../components/SignInPage/SignInPage";
+import SignUpPage from "../components/SignUpPage/SignUpPage";
 import TypeProductPage from "../components/TypeProductPage/TypeProductPage";
 import HomePage from "../page/HomePage/HomePage";
 import NotFoundPage from "../page/NotFoundPage/NotFoundPage";
@@ -25,8 +28,26 @@ export const routes = [
 
     },
     {
-        path: '/type',
+        path: '/:type',
         page: TypeProductPage,
+        isShowHeader: true
+
+    },
+    {
+        path: '/sign-in',
+        page: SignInPage,
+        isShowHeader: true
+
+    },
+    {
+        path: '/sign-up',
+        page: SignUpPage,
+        isShowHeader: true
+
+    },
+    {
+        path: '/product-details',
+        page: ProductsDetailsPage,
         isShowHeader: true
 
     },
