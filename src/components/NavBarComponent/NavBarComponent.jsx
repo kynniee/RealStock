@@ -17,7 +17,7 @@ const NavBarComponent = () => {
               width: "100%",
               display: " flex",
               flexDirection: "column",
-              gap: " 12px",
+              gap: " 12px" 
             }}
             onChange={onChange}
           >

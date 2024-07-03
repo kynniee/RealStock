@@ -13,20 +13,17 @@ const HomePage = () => {
   const arr = ["PC", "Laptop", " linh kien"];
   return (
     <>
-      <div style={{ padding: "0 120px" }}>
+      <div style={{ width: '1270px', margin: '0 auto' }}>
         <WrapperTypeProduct>
           {arr.map((item) => {
             return <TypeProduct name={item} key={item} />;
           })}
         </WrapperTypeProduct>
       </div>
+      <div className='body' style={{ width: '100%', backgroundColor: '#fefefe' }} >
       <div
         id="container"
-        style={{
-          backgroundColor: "#efefef",
-          padding: "0 120px",
-          height: "1000px",
-        }}
+        style={{ height: '1000px', width: '1270px', margin: '0 auto' }}
       >
         <SliderComponent arrImages={[slider1, slider2, slider3, slider4]} />
         <WrapperProducts>
@@ -60,6 +57,7 @@ const HomePage = () => {
             styleTextButton ={{ fontWeight: '500'  }}
           />
         </div>
+      </div>
       </div>
     </>
   );

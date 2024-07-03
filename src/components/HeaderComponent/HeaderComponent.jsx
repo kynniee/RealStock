@@ -15,7 +15,7 @@ import ButtonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
 
 const HeaderComponent = () => {
   return (
-    <div>
+    <div style={{width: '100%', background: 'rgb(26,148,255)', display: 'flex', justifyContent:'center'}} >
       <WrapperHeader>
         <Col span={6}>
           <WrapperTextHeader>RealStock</WrapperTextHeader>
@@ -28,7 +28,7 @@ const HeaderComponent = () => {
             placeholder="Nhập sản phẩm muốn tìm kiếm"
           />
         </Col>
-        <Col span={6} style={{ display: "flex", gap: '20px', alignItems: 'center'}}>
+        <Col span={6} style={{ display: "flex", gap: '40px', alignItems: 'center'}}>
           <WrapperHeaderAccout>
             <UserOutlined style={{ fontSize: "30px" }} />
             <div>

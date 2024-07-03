@@ -44,7 +44,10 @@ const CardComponent = () => {
         <WrapperStyleTextSell> | da ban 999+</WrapperStyleTextSell>
       </WrapperReporText>
       <WrapperPriceText>
+        <span style={{marginRight: '8px',}}>
+
         100.000.000d
+        </span>
         <WrapperDiscountText> -5%</WrapperDiscountText>
       </WrapperPriceText>
     </WrapperCardStyle>
