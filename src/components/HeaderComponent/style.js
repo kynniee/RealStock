@@ -1,4 +1,4 @@
-import { Row } from "antd";
+import { Image, Row } from 'antd';
 import styled from "styled-components";
 
 export const WrapperHeader = styled(Row)`
@@ -14,6 +14,7 @@ export const WrapperTextHeader = styled.span`
   color: #fff;
   font-weight: bold;
   text-align: left;
+  margin: 20px;
 `;
 export const WrapperHeaderAccout = styled.div`
   display: flex;
@@ -26,4 +27,9 @@ export const WrapperTextHeaderSmall = styled.span`
   font-size: 12px;
   color: #fff;
   white-space: nowrap;
+`;
+
+export const WrapperLogoHeader = styled(Image)`
+ border-radius: 50px;
+ 
 `;

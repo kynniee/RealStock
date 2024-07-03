@@ -8,11 +8,12 @@ flex-direction: column;
 `
 export const WrapperContainerRight = styled.div`
     width: 300px;
-    background: linear-gradient(136deg, rgb(240,248,255) -1% , rgb(219,238,255) 85%);
+    background: #fff;
     display: flex;
-    justifyContent: center;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+    border-left: 1px solid #eee;
     gap: 4px;
 `
 export const WrapperTextLight = styled.span`
