@@ -2,7 +2,7 @@ import React from "react";
 import { Badge, Col } from "antd";
 import {
   WrapperHeader,
-  WrapperHeaderAccout,
+  WrapperHeaderAccount,
   WrapperLogoHeader,
   WrapperTextHeader,
   WrapperTextHeaderSmall,
@@ -32,7 +32,7 @@ const HeaderComponent = () => {
           />
         </Col>
         <Col span={6} style={{ display: "flex", gap: '40px', alignItems: 'center'}}>
-          <WrapperHeaderAccout>
+          <WrapperHeaderAccount>
             <UserOutlined style={{ fontSize: "30px" }} />
             <div>
               <WrapperTextHeaderSmall>Đăng nhập/Đăng ký</WrapperTextHeaderSmall>
@@ -41,7 +41,7 @@ const HeaderComponent = () => {
                 <CaretDownOutlined />
               </div>
             </div>
-          </WrapperHeaderAccout>
+          </WrapperHeaderAccount>
           <div>
             <Badge count={4} size='small' >
             <ShoppingCartOutlined style={{ fontSize: "30px", color: "#fff"}} />
