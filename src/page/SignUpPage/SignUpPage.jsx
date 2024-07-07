@@ -109,7 +109,7 @@ const SignUpPage = () => {
               onChange={handleOnchangeConfirmPassword}
             />
           </div>
-          {data?.status === 'ERR' && <a style={{ color: "red" }}> {data?.message}</a>}
+          {data?.status === "ERR" && <span style={{ color: "red" }}> {data?.message}</span>}
           <Loading isPending={mutation.isPending}>
             <ButtonComponent
               disabled={
