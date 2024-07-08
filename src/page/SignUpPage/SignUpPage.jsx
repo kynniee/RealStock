@@ -21,7 +21,7 @@ const SignUpPage = () => {
   const navigate = useNavigate();
 
   const mutation = useMutationHooks((data) => UserService.signupUser(data));
-  const { data, isPending } = mutation;
+  const { data } = mutation;
 
   const handleOnchangeEmail = (value) => {
     setEmail(value);
@@ -36,7 +36,7 @@ const SignUpPage = () => {
     navigate("/sign-in");
   };
   const handleSignUp = () => {
-    mutation.mutate({ email, password, confirmPassword})
+    mutation.mutate({ email, password, confirmPassword });
     console.log("sign-up", email, password, confirmPassword);
   };
   return (
@@ -109,7 +109,9 @@ const SignUpPage = () => {
               onChange={handleOnchangeConfirmPassword}
             />
           </div>
-          {data?.status === "ERR" && <span style={{ color: "red" }}> {data?.message}</span>}
+          {data?.status === "ERR" && (
+            <span style={{ color: "red" }}> {data?.message}</span>
+          )}
           <Loading isPending={mutation.isPending}>
             <ButtonComponent
               disabled={

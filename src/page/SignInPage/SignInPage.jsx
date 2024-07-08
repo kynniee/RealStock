@@ -11,38 +11,34 @@ import { Image } from "antd";
 import { useState } from "react";
 import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import * as UserService from '../../services/UserService'
+import * as UserService from "../../services/UserService";
 import { useMutationHooks } from "../../hooks/useMutationHook";
 import Loading from "../../components/LoadingComponent/Loading";
 
 const SignInPage = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
-  const [email, setEmail]= useState('')
-  const [password, setPassword]= useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-
-  const mutation = useMutationHooks(
-     data =>  UserService.loginUser(data)
-    
-  )
-  const {data} = mutation;
-  console.log('mutation', mutation);
+  const mutation = useMutationHooks((data) => UserService.loginUser(data));
+  const { data } = mutation;
+  console.log("mutation", mutation);
 
   const handleNavigateSignUp = () => {
     navigate("/sign-up");
   };
-  const handleOnchangeEmail =(value) =>{
-    setEmail(value)
-  }
-  const handleOnchangePassword =(value) =>{
-    setPassword(value)
-  }
-  const handleSignIn = ()=>{
-    mutation.mutate({email, password})
-    console.log('sign-in', email, password);
-  }
+  const handleOnchangeEmail = (value) => {
+    setEmail(value);
+  };
+  const handleOnchangePassword = (value) => {
+    setPassword(value);
+  };
+  const handleSignIn = () => {
+    mutation.mutate({ email, password });
+    console.log("sign-in", email, password);
+  };
   return (
     <div
       style={{
@@ -68,13 +64,15 @@ const SignInPage = () => {
           <InputForm
             style={{ marginBottom: "10px" }}
             placeholder="Nhập tài khoản email"
-            value={email} onChange= {handleOnchangeEmail} 
+            value={email}
+            onChange={handleOnchangeEmail}
           />
           <div style={{ position: "relative" }}>
             <InputForm
               placeholder="Mật khẩu"
               type={isShowPassword ? "text" : "password"}
-              value={password} onChange= {handleOnchangePassword} 
+              value={password}
+              onChange={handleOnchangePassword}
             />
             <span
               style={{
@@ -89,28 +87,29 @@ const SignInPage = () => {
             </span>
           </div>
 
-              {data?.status === "ERR" && <span style={{color:'red'}} >{data?.message}</span>}
+          {data?.status === "ERR" && (
+            <span style={{ color: "red" }}>{data?.message}</span>
+          )}
           <Loading isPending={mutation.isPending}>
-
-          <ButtonComponent
-            disabled={!email.length || !password.length}
-          onClick={handleSignIn}
-            size={40}
-            styleButton={{
-              background: "rgb(255,57,69)",
-              height: "48px",
-              width: "220px",
-              border: "none",
-              borderRadius: "4px",
-              margin: "26px 0 10px",
-            }}
-            textButton={"Đăng Nhập"}
-            styleTextButton={{
-              color: "#fff",
-              fontSize: "15px",
-              fontWeight: "700",
-            }}
-          ></ButtonComponent>
+            <ButtonComponent
+              disabled={!email.length || !password.length}
+              onClick={handleSignIn}
+              size={40}
+              styleButton={{
+                background: "rgb(255,57,69)",
+                height: "48px",
+                width: "220px",
+                border: "none",
+                borderRadius: "4px",
+                margin: "26px 0 10px",
+              }}
+              textButton={"Đăng Nhập"}
+              styleTextButton={{
+                color: "#fff",
+                fontSize: "15px",
+                fontWeight: "700",
+              }}
+            ></ButtonComponent>
           </Loading>
 
           <p>
@@ -137,6 +136,5 @@ const SignInPage = () => {
     </div>
   );
 };
-
 
 export default SignInPage;
