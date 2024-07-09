@@ -1,4 +1,4 @@
-import React , { useEffect }from "react";
+import React, { useEffect } from "react";
 import {
   WrapperContainerLeft,
   WrapperContainerRight,
@@ -14,55 +14,38 @@ import { useNavigate } from "react-router-dom";
 import * as UserService from "../../services/UserService";
 import { useMutationHooks } from "../../hooks/useMutationHook";
 import Loading from "../../components/LoadingComponent/Loading";
-import { jwtDecode}  from 'jwt-decode'
-import { useDispatch } from 'react-redux';
-import updateUser from '../../redux/slides/userSlide';
+import { jwtDecode } from "jwt-decode";
+import { useDispatch } from "react-redux";
+import { updateUser } from "../../redux/slides/UserSlide";
 
-
-  const SignInPage = () => {
+const SignInPage = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const mutation = useMutationHooks((data) => UserService.loginUser(data));
   const { data, isSuccess } = mutation;
-  
-  useEffect(()=>{
-    if(isSuccess){
-      navigate('/')
-      localStorage.setItem('access_token', data?.access_token)
-      if(data?.access_token){
-        const decoded = jwtDecode(data?.access_token)
-        if(decoded?.id){
-          handleGetDetailsUser(decoded?.id, data?.access_token)
-           
+
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/");
+      localStorage.setItem("access_token", JSON.stringify(data?.access_token));
+      if (data?.access_token) {
+        const decoded = jwtDecode(data?.access_token);
+        if (decoded?.id) {
+          handleGetDetailsUser(decoded?.id, data?.access_token);
         }
       }
     }
-
-  },[isSuccess]
-)
-// const handleGetDetailsUser = async (id, token) => {
- 
-//     const res = await UserService.getDetailsUser(id, token);
-//     const userData = res?.data || {}; // Ensure a default empty object
-//     dispatch(updateUser({
-//       name: userData.name,
-//       email: userData.email,
-//       access_token: token,
-//     }));
- 
-// };
-
-
-  const handleGetDetailsUser = async(id,token)=>{
-          const res = await UserService.getDetailsUser(id, token)
-          dispatch(updateUser({...res?.data, access_token: token}))
-  }
-
+  }, [isSuccess]);
+  const handleGetDetailsUser = async (id, token) => {
+    const res = await UserService.getDetailsUser(id, token);
+    console.log("res", res);
+    dispatch(updateUser({ ...res?.data, access_token: token }));
+  };
 
   console.log("mutation", mutation);
 

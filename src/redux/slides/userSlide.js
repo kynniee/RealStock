@@ -6,16 +6,24 @@ const initialState = {
   access_token: '',
 }
 
-export const userSlide = createSlice({
+export const UserSlide = createSlice({
   name: 'user',
   initialState,
   reducers: {
     updateUser: (state, action) => {
       const {name, email, access_token} = action.payload
-      console.log('action', action);
+
       state.name = name || email;
       state.email = email;
       state.access_token = access_token
+
+
+    },
+    resetUser: (state) => {
+
+      state.name ='';
+      state.email = '';
+      state.access_token = '';
 
 
     },
@@ -24,6 +32,6 @@ export const userSlide = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { updateUser } = userSlide.actions
+export const { updateUser, resetUser } = UserSlide.actions
 
-export default userSlide.reducer
+export default UserSlide.reducer

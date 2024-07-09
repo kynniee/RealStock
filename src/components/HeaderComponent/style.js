@@ -33,3 +33,10 @@ export const WrapperLogoHeader = styled(Image)`
  border-radius: 50px;
  
 `;
+export const WrapperContentPopup = styled.p`
+  cursor: pointer ;
+  &:hover {
+    background: #85c6ff;
+    color: #fff
+  }
+`;
