@@ -51,24 +51,12 @@ const ProfilePage = () => {
   }, [isSuccess, isError]);
 
   const handleGetDetailsUser = async (id, token) => {
-    try {
+
     const res = await UserService.getDetailsUser(id, token);
-    console.log("Response from getDetailsUser:", res); // Log phản hồi từ API để xem liệu có dữ liệu name hay không
-
-    // Kiểm tra và xử lý phản hồi từ API
-    if (res && res.data && res.data.name) {
-      // Cập nhật vào Redux state
+    
       dispatch(updateUser({ ...res.data, access_token: token }));
-      console.log("User details updated in Redux state:", res.data); // Log để xem liệu đã cập nhật thành công hay không
-    } else {
-      console.error("Invalid response or missing name:", res);
-    }
-  } catch (error) {
-    console.error("Error fetching user details:", error);
-  
-  };
-}
-
+      
+    } 
   const handleOnchangeEmail = (value) => {
     setEmail(value);
   };
