@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Badge, Button, Col, Popover } from "antd";
+import React, { useEffect, useState } from "react";
+import { Badge, Col, Popover } from "antd";
 import {
   WrapperContentPopup,
   WrapperHeader,
@@ -26,6 +26,7 @@ const HeaderComponent = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleNavigateLogin = () => {
@@ -37,12 +38,18 @@ const HeaderComponent = () => {
     dispatch(resetUser());
     setLoading(false);
   };
+  useEffect(()=>{ 
+    setLoading(true);
+
+    setUserName(user?.name)
+    setLoading(false);
+  },[user?.name])
+
+
   const content = (
     <div>
-      <WrapperContentPopup>Thông tin người dùng</WrapperContentPopup>
-      <WrapperContentPopup onClick={handleLogout}>
-        Đăng Xuất
-      </WrapperContentPopup>
+      <WrapperContentPopup onClick={()=> navigate('/profile-user')}>Thông tin người dùng</WrapperContentPopup>
+      <WrapperContentPopup onClick={handleLogout}> Đăng Xuất</WrapperContentPopup>
     </div>
   );
   console.log("user", user);
@@ -81,10 +88,10 @@ const HeaderComponent = () => {
             <WrapperHeaderAccount>
               <UserOutlined style={{ fontSize: "30px" }} />
 
-              {user?.name ? (
+              {user?.access_token ? (
                 <>
                   <Popover content={content} trigger="click">
-                    <div style={{ cursor: "pointer" }}>{user.name}</div>
+                    <div style={{ cursor: "pointer" }}>{userName?.length ? userName: user?.email}</div> 
                   </Popover>
                 </>
               ) : (
