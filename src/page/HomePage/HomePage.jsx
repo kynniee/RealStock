@@ -8,9 +8,21 @@ import slider3 from "../../assets/images/slider3.png";
 import slider4 from "../../assets/images/slider4.png";
 import CardComponent from "../../components/CardComponent/CardComponent";
 import { WrapperButtonMore, WrapperProducts } from "../../components/NavBarComponent/style";
+import * as ProductService from '../../services/ProductService'
+import { isPending } from "@reduxjs/toolkit";
+import { useQuery } from "@tanstack/react-query";
+
+
 
 const HomePage = () => {
   const arr = ["PC", "Laptop", " linh kien"];
+  const fetchProductAll = async ()=>{
+   const res= await ProductService.getallProduct()
+   console.log('res',res);
+   return res
+  }
+  const {isPending, data: products} = useQuery(['products'], fetchProductAll,{ retry: 3, retryDelay: 1000})
+  console.log("data", products);
   return (
     <>
       <div style={{ width: '1270px', margin: '0 auto' }}>
