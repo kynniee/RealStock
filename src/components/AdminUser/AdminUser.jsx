@@ -93,6 +93,7 @@ const AdminUser = () => {
     }
     setisPendingUpdate(false)
   }
+  
 
   useEffect(() => {
     form.setFieldsValue(stateUserDetails)

@@ -119,6 +119,7 @@ const AdminProduct = () => {
     }
     setisPendingUpdate(false)
   }
+  
 
   useEffect(() => {
     if(!isModalOpen) {
@@ -161,6 +162,7 @@ const AdminProduct = () => {
   const queryProduct = useQuery({ queryKey: ['products'], queryFn: getAllProducts })
   const typeProduct = useQuery({ queryKey: ['type-product'], queryFn: fetchAllTypeProduct })
   const {  data: products } = queryProduct
+  console.log(products);
   const renderAction = () => {
     return (
       <div>
@@ -314,9 +316,13 @@ const AdminProduct = () => {
       render: renderAction
     },
   ];
+  console.log("products", products);
+  console.log("products.data", products?.data);
+
   const dataTable = products?.data?.length && products?.data?.map((product) => {
     return { ...product, key: product._id }
   })
+  console.log("dataTable", dataTable);
 
   useEffect(() => {
     if (isSuccess && data?.status === 'OK') {

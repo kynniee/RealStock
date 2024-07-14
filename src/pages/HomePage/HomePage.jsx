@@ -65,8 +65,7 @@ const HomePage = () => {
   };
   const { isPending, data: products, isPreviousData } = useQuery({
     queryKey: ['products', limit, searchDebounce],
-    queryFn: fetchProductAll, 
-    queryHash: { retry: 3, retryDelay: 1000, keepPreviousData: true }})
+    queryFn: fetchProductAll,  retry: 3, retryDelay: 1000, keepPreviousData: true })
 
   useEffect(() => {
     fetchAllTypeProduct()
@@ -108,7 +107,7 @@ const HomePage = () => {
           </WrapperProducts>
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
             <WrapperButtonMore
-              textbutton={isPreviousData ? 'Load more' : "Xem thêm"} type="outline" styleButton={{
+              textButton={isPreviousData ? 'Load more' : "Xem thêm"} type="outline" styleButton={{
                 border: `1px solid ${products?.total === products?.data?.length ? '#f5f5f5' : '#9255FD'}`, color: `${products?.total === products?.data?.length ? '#f5f5f5' : '#9255FD'}`,
                 width: '240px', height: '38px', borderRadius: '4px'
               }}

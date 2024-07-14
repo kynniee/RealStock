@@ -41,7 +41,6 @@ const TableComponent = (props) => {
       })
       .saveAs("Excel.xlsx");
   };
-
   return (
     <Loading isPending={isPending}>
       {!!rowSelectedKeys.length && (
