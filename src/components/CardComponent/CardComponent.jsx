@@ -4,27 +4,42 @@ import {
   WrapperCardStyle,
   WrapperDiscountText,
   WrapperPriceText,
-  WrapperReporText,
+  WrapperReportText,
   WrapperStyleTextSell,
 } from "./style";
 import { StarFilled } from "@ant-design/icons";
-import hang from "../../assets/images/hang.png";
+import logo from "../../assets/images/logo.png";
+import { useNavigate } from "react-router-dom";
+import { convertPrice } from "../../utils";
 
-const CardComponent = () => {
+const CardComponent = (props) => {
+  const {
+    countInStock,
+    description,
+    image,
+    name,
+    price,
+    rating,
+    type,
+    discount,
+    selled,
+    id,
+  } = props;
+  const navigate = useNavigate();
+  const handleDetailsProduct = (id) => {
+    navigate(`/product-details/${id}`);
+  };
   return (
     <WrapperCardStyle
       hoverable
-      style={{ width: 20 / 0 }}
+      headStyle={{ width: "200px", height: "200px" }}
+      style={{ width: 200 }}
       bodyStyle={{ padding: "10px" }}
-      cover={
-        <img
-          alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-        />
-      }
+      cover={<img alt="example" src={image} />}
+      onClick={() => handleDetailsProduct(id)}
     >
       <img
-        src={hang}
+        src={logo}
         style={{
           width: "68px",
           height: "14px",
@@ -34,21 +49,19 @@ const CardComponent = () => {
           borderTopLeftRadius: "3px",
         }}
       />
-      <StyleNameProduct> Iphone </StyleNameProduct>
-      <WrapperReporText>
-        {" "}
+      <StyleNameProduct>{name}</StyleNameProduct>
+      <WrapperReportText>
         <span style={{ marginRight: "4px" }}>
-          <span> 4.91</span>
-          <StarFilled style={{ fontSize: "12px", color: "#fbd322" }} />
+          <span>{rating} </span>{" "}
+          <StarFilled
+            style={{ fontSize: "12px", color: "rgb(253, 216, 54)" }}
+          />
         </span>
-        <WrapperStyleTextSell> | da ban 999+</WrapperStyleTextSell>
-      </WrapperReporText>
+        <WrapperStyleTextSell> | Da ban {selled || 1000}+</WrapperStyleTextSell>
+      </WrapperReportText>
       <WrapperPriceText>
-        <span style={{marginRight: '8px',}}>
-
-        100.000.000d
-        </span>
-        <WrapperDiscountText> -5%</WrapperDiscountText>
+        <span style={{ marginRight: "8px" }}>{convertPrice(price)}</span>
+        <WrapperDiscountText>- {discount || 5} %</WrapperDiscountText>
       </WrapperPriceText>
     </WrapperCardStyle>
   );
