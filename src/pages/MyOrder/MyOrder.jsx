@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react'
+import React,{ useEffect } from 'react'
 import Loading from '../../components/LoadingComponent/Loading';
 import { useQuery } from '@tanstack/react-query';
 import * as OrderService from '../../services/OrderService'
@@ -20,7 +20,8 @@ const MyOrderPage = () => {
   }
   const user = useSelector((state) => state.user)
 
-  const queryOrder = useQuery({ queryKey: ['orders'], queryFn: fetchMyOrder }, {
+  const queryOrder = useQuery({
+     queryKey: ['orders'], queryFn: fetchMyOrder },{
     enabled: state?.id && state?.token
   })
   const { isPending, data } = queryOrder
@@ -121,7 +122,7 @@ const MyOrderPage = () => {
                             border: '1px solid #9255FD',
                             borderRadius: '4px'
                         }}
-                        textbutton={'Hủy đơn hàng'}
+                        textButton={'Hủy đơn hàng'}
                         styleTextButton={{ color: '#9255FD', fontSize: '14px' }}
                       >
                       </ButtonComponent>
@@ -133,7 +134,7 @@ const MyOrderPage = () => {
                             border: '1px solid #9255FD',
                             borderRadius: '4px'
                         }}
-                        textbutton={'Xem chi tiết'}
+                        textButton={'Xem chi tiết'}
                         styleTextButton={{ color: '#9255FD', fontSize: '14px' }}
                       >
                       </ButtonComponent>

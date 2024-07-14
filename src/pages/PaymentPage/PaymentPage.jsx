@@ -319,7 +319,7 @@ const PaymentPage = () => {
                       border: 'none',
                       borderRadius: '4px'
                   }}
-                  textbutton={'Đặt hàng'}
+                  textButton={'Đặt hàng'}
                   styleTextButton={{ color: '#fff', fontSize: '15px', fontWeight: '700' }}
               ></ButtonComponent>
               )}

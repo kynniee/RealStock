@@ -299,7 +299,7 @@ const OrderPage = () => {
                   border: 'none',
                   borderRadius: '4px'
               }}
-              textbutton={'Mua hàng'}
+              textButton={'Mua hàng'}
               styleTextButton={{ color: '#fff', fontSize: '15px', fontWeight: '700' }}
           ></ButtonComponent>
           </WrapperRight>
