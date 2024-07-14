@@ -8,7 +8,7 @@ import {
   WrapperStyleTextSell,
 } from "./style";
 import { StarFilled } from "@ant-design/icons";
-import logo from "../../assets/images/logo.png";
+import logoReal from "../../assets/images/logo-real.png";
 import { useNavigate } from "react-router-dom";
 import { convertPrice } from "../../utils";
 
@@ -39,10 +39,10 @@ const CardComponent = (props) => {
       onClick={() => handleDetailsProduct(id)}
     >
       <img
-        src={logo}
+        src={logoReal}
         style={{
-          width: "68px",
-          height: "14px",
+          width: "70px",
+          height: "16px",
           position: "absolute",
           top: -1,
           left: -1,

@@ -73,7 +73,10 @@ const ProductDetailsComponent = ({idProduct}) => {
         }
     }
 
-    const { isPending, data: productDetails } = useQuery(['product-details', idProduct], fetchGetDetailsProduct, { enabled : !!idProduct})
+    const { isPending, data: productDetails } = useQuery({
+        queryKey: ['product-details', idProduct], 
+        queryFn: fetchGetDetailsProduct,
+        enabled : !!idProduct})
     const handleAddOrderProduct = () => {
         if(!user?.id) {
             navigate('/sign-in', {state: location?.pathname})
@@ -183,7 +186,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                                     borderRadius: '4px'
                                 }}
                                 onClick={handleAddOrderProduct}
-                                textbutton={'Chọn mua'}
+                                textButton={'Chọn mua'}
                                 styleTextButton={{ color: '#fff', fontSize: '15px', fontWeight: '700' }}
                             ></ButtonComponent>
                             {errorLimitOrder && <div style={{color: 'red'}}>San pham het hang</div>}
@@ -197,7 +200,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                                 border: '1px solid rgb(13, 92, 182)',
                                 borderRadius: '4px'
                             }}
-                            textbutton={'Mua trả sau'}
+                            textButton={'Mua trả sau'}
                             styleTextButton={{ color: 'rgb(13, 92, 182)', fontSize: '15px' }}
                         ></ButtonComponent>
                     </div>
