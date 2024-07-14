@@ -7,7 +7,7 @@ import { orderContant } from '../../contant';
 import { convertPrice } from '../../utils';
 
 
-const OrderSucess = () => {
+const OrderSuccess = () => {
   const location = useLocation()
   const {state} = location
   return (
@@ -70,4 +70,4 @@ const OrderSucess = () => {
   )
 }
 
-export default OrderSucess
+export default OrderSuccess

@@ -21,8 +21,8 @@ const DetailsOrderPage = () => {
     return res.data
   }
 
-  const queryOrder = useQuery({ queryKey: ['orders-details'], queryFn: fetchDetailsOrder }, {
-    enabled: id
+  const queryOrder = useQuery({ queryKey: ['orders-details'], queryFn: fetchDetailsOrder , 
+    enabled: Boolean(id),
   })
   const { isPending, data } = queryOrder
 
@@ -35,7 +35,7 @@ const DetailsOrderPage = () => {
 
   return (
    <Loading isPending={isPending}>
-     <div style={{width: '100%', height: '100vh', background: '#f5f5fa'}}>
+     <div style={{width: '100%', height: '150vh', background: '#f5f5fa'}}>
       <div style={{ width: '1270px', margin: '0 auto', height: '1270px'}}>
         <h4>Chi tiết đơn hàng</h4>
         <WrapperHeaderUser>

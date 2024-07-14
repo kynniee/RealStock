@@ -44,8 +44,8 @@ const CardComponent = (props) => {
           width: "70px",
           height: "16px",
           position: "absolute",
-          top: -1,
-          left: -1,
+          top: 3,
+          left: 3,
           borderTopLeftRadius: "3px",
         }}
       />

@@ -20,10 +20,7 @@ const MyOrderPage = () => {
   }
   const user = useSelector((state) => state.user)
 
-  const queryOrder = useQuery({
-     queryKey: ['orders'], queryFn: fetchMyOrder },{
-    enabled: state?.id && state?.token
-  })
+  const queryOrder = useQuery({queryKey: ['orders'], queryFn: fetchMyOrder ,enabled: Boolean( state?.id && state?.token),})
   const { isPending, data } = queryOrder
 
   const handleDetailsOrder = (id) => {

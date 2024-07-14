@@ -16,7 +16,7 @@ import * as message from '../../components/Message/Message'
 import { updateUser } from '../../redux/slides/UserSlide';
 import { useNavigate } from 'react-router-dom';
 import { removeAllOrderProduct } from '../../redux/slides/orderSlide';
-import { PayPalButton } from "react-paypal-button-v2";
+// import { PayPalButton } from "react-paypal-button-v2";
 import * as PaymentService from '../../services/PaymentService'
 
 const PaymentPage = () => {
@@ -172,26 +172,26 @@ const PaymentPage = () => {
     setIsOpenModalUpdateInfo(false)
   }
 
-  const onSuccessPaypal = (details, data) => {
-    mutationAddOrder.mutate(
-      { 
-        token: user?.access_token, 
-        orderItems: order?.orderItemsSlected, 
-        fullName: user?.name,
-        address:user?.address, 
-        phone:user?.phone,
-        city: user?.city,
-        paymentMethod: payment,
-        itemsPrice: priceMemo,
-        shippingPrice: diliveryPriceMemo,
-        totalPrice: totalPriceMemo,
-        user: user?.id,
-        isPaid :true,
-        paidAt: details.update_time, 
-        email: user?.email
-      }
-    )
-  }
+  // const onSuccessPaypal = (details, data) => {
+  //   mutationAddOrder.mutate(
+  //     { 
+  //       token: user?.access_token, 
+  //       orderItems: order?.orderItemsSlected, 
+  //       fullName: user?.name,
+  //       address:user?.address, 
+  //       phone:user?.phone,
+  //       city: user?.city,
+  //       paymentMethod: payment,
+  //       itemsPrice: priceMemo,
+  //       shippingPrice: diliveryPriceMemo,
+  //       totalPrice: totalPriceMemo,
+  //       user: user?.id,
+  //       isPaid :true,
+  //       paidAt: details.update_time, 
+  //       email: user?.email
+  //     }
+  //   )
+  // }
 
 
   const handleUpdateInforUser = () => {
@@ -220,25 +220,25 @@ const PaymentPage = () => {
     setPayment(e.target.value)
   }
 
-  const addPaypalScript = async () => {
-    const { data } = await PaymentService.getConfig()
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = `https://www.paypal.com/sdk/js?client-id=${data}`
-    script.async = true;
-    script.onload = () => {
-      setSdkReady(true)
-    }
-    document.body.appendChild(script)
-  }
+  // const addPaypalScript = async () => {
+  //   const { data } = await PaymentService.getConfig()
+  //   const script = document.createElement('script')
+  //   script.type = 'text/javascript'
+  //   script.src = `https://www.paypal.com/sdk/js?client-id=${data}`
+  //   script.async = true;
+  //   script.onload = () => {
+  //     setSdkReady(true)
+  //   }
+  //   document.body.appendChild(script)
+  // }
 
-  useEffect(() => {
-    if(!window.paypal) {
-      addPaypalScript()
-    }else {
-      setSdkReady(true)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if(!window.paypal) {
+  //     addPaypalScript()
+  //   }else {
+  //     setSdkReady(true)
+  //   }
+  // }, [])
 
   return (
     <div style={{background: '#f5f5fa', with: '100%', height: '100vh'}}>
@@ -261,7 +261,7 @@ const PaymentPage = () => {
                   <Lable>Chọn phương thức thanh toán</Lable>
                   <WrapperRadio onChange={handlePayment} value={payment}> 
                     <Radio value="later_money"> Thanh toán tiền mặt khi nhận hàng</Radio>
-                    <Radio value="paypal"> Thanh toán tiền bằng paypal</Radio>
+                    {/* <Radio value="paypal"> Thanh toán tiền bằng paypal</Radio> */}
                   </WrapperRadio>
                 </div>
               </WrapperInfo>
@@ -299,14 +299,14 @@ const PaymentPage = () => {
               </div>
               {payment === 'paypal' && sdkReady ? (
                 <div style={{width: '320px'}}>
-                  <PayPalButton
+                  {/* <PayPalButton
                     amount={Math.round(totalPriceMemo / 30000)}
                     // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                     onSuccess={onSuccessPaypal}
                     onError={() => {
                       alert('Erroe')
                     }}
-                  />
+                  /> */}
                 </div>
               ) : (
                 <ButtonComponent
