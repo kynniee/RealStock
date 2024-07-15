@@ -86,18 +86,18 @@ const MyOrderPage = () => {
     <Loading isPending={isPending || isPendingCancel}>
       <WrapperContainer>
         <div style={{height: '100%', width: '1280px', margin: '0 auto'}}>
-          <h4>Đơn hàng của tôi</h4>
+          <h4 style={{fontSize: '20px', fontWeight: 'bold', margin: '5px 0', color: '#1791c8'}}>Đơn hàng của tôi</h4>
           <WrapperListOrder>
             {data?.map((order) => {
               return (
                 <WrapperItemOrder key={order?._id}>
                   <WrapperStatus>
-                    <span style={{fontSize: '14px', fontWeight: 'bold'}}>Trạng thái</span>
-                    <div>
+                    <span style={{fontSize: '14px', fontWeight: 'bold', margin: '5px 0', color: '#1791c8'}}>Trạng thái</span>
+                    <div style={{margin: '5px 0'}}>
                       <span style={{color: 'rgb(255, 66, 78)'}}>Giao hàng: </span>
                       <span style={{color: 'rgb(90, 32, 193)', fontWeight: 'bold'}}>{`${order.isDelivered ? 'Đã giao hàng': 'Chưa giao hàng'}`}</span>
                     </div>
-                    <div>
+                    <div style={{color: '5px 0'}}>
                       <span style={{color: 'rgb(255, 66, 78)'}}>Thanh toán: </span>
                       <span style={{color: 'rgb(90, 32, 193)', fontWeight: 'bold'}}>{`${order.isPaid ? 'Đã thanh toán': 'Chưa thanh toán'}`}</span>
                     </div>

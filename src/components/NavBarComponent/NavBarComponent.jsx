@@ -2,7 +2,7 @@ import { Checkbox, Col, Rate, Row } from "antd";
 import React from "react";
 import {
   WrapperContent,
-  WrapperLableText,
+  WrapperLabelText,
   WrapperTextPrice,
   WrapperTextValue,
 } from "./style";
@@ -59,7 +59,7 @@ const NavBarComponent = () => {
 
   return (
     <div>
-      <WrapperLableText>Lable</WrapperLableText>
+      <WrapperLabelText>Label</WrapperLabelText>
       <WrapperContent>
         {renderContent("text", ["Tu lanh", "TV", "MAYGIAT"])}
       </WrapperContent>

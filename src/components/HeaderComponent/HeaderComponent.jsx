@@ -105,11 +105,11 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
         justifyContent: "center",
       }}
     >
-      <a href = "/">
+      <a href = "/"  style={{ margin: ' 6px 0 6px 48px'  }} >
 
      
       <Image
-            style={{borderRadius: '50%', marginTop: ' 6px' , marginLeft: ' 24px ' }}
+            style={{borderRadius: '50%' }}
             src={imageLogo}
             preview={false}
             alt="image-logo"

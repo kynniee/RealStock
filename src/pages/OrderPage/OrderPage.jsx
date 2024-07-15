@@ -218,10 +218,10 @@ const OrderPage = () => {
     },
   ];
   return (
-    <div style={{ background: "#f5f5fa", with: "100%", height: "100vh" }}>
-      <div style={{ height: "100%", width: "1280px", margin: "0 auto" }}>
-        <h3 style={{ fontWeight: "bold" }}>Giỏ hàng</h3>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ background: "#f5f5fa", width: "100%", padding: '10px' }}>
+      <div style={{ width: "1280px",padding: '10px', margin: "20px auto", background: "#fff",borderRadius: '4px'}}>
+        <h3 style={{color: '#1791c8', fontWeight: "bold", margin: '20px' }}>Giỏ hàng</h3>
+        <div style={{ display: "flex", justifyContent: "center  " }}>
           <WrapperLeft>
             <h4>Phí giao hàng</h4>
             <WrapperStyleHeaderDilivery>

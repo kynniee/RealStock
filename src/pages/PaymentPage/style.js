@@ -72,7 +72,7 @@ export const WrapperTotal = styled.div`
     border-bottom-left-radius: 6px;
 `
 
-export const Lable = styled.span`
+export const Label = styled.span`
   font-size: 12px;
   color: #000;
   font-weight: bold

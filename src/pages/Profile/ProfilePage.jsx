@@ -90,15 +90,15 @@ const ProfilePage = () => {
     });
   };
   return (
-    <div style={{ width: "1280px", margin: "0 auto", height: "500px" }}>
-      <WrapperHeader>Thông tin người dùng</WrapperHeader>
+    <div style={{ width: "1280px", margin: "10px auto", height: "500px"}}>
       <Loading isPending={isPending}>
         <WrapperContentProfile>
-          <WrapperInput>
-            <WrapperLabel htmlFor="name">Name</WrapperLabel>
+      <WrapperHeader style={{ color: '#1791c8'}} >Thông tin người dùng</WrapperHeader>
+        <WrapperInput>
+            <WrapperLabel htmlFor="name">Name </WrapperLabel>
             <InputForm
-              style={{ width: "300px" }}
-              id="name"
+              id={name}
+              style={{ width: "500px", height: '40px' }}
               value={name}
               onChange={handleOnchangeName}
             />
@@ -106,24 +106,26 @@ const ProfilePage = () => {
               onClick={handleUpdate}
               size={40}
               styleButton={{
-                height: "30px",
-                width: "fit-content",
+                background: "#1791c8",
+                height: "42px",
+                width: "200px",
+                border: "none",
                 borderRadius: "4px",
-                padding: "2px 6px 6px",
+                // margin: "10px 0 10px",
               }}
               textButton={"Cập nhật"}
               styleTextButton={{
-                color: "#1791c8",
+                color: "#fff",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
             ></ButtonComponent>
           </WrapperInput>
           <WrapperInput>
-            <WrapperLabel htmlFor="email">Email</WrapperLabel>
+            <WrapperLabel htmlFor="email">Email </WrapperLabel>
             <InputForm
-              style={{ width: "300px" }}
-              id="email"
+              id={email}
+              style={{ width: "500px", height: '40px'  }}
               value={email}
               onChange={handleOnchangeEmail}
             />
@@ -131,24 +133,26 @@ const ProfilePage = () => {
               onClick={handleUpdate}
               size={40}
               styleButton={{
-                height: "30px",
-                width: "fit-content",
+                background: "#1791c8",
+                height: "43px",
+                width: "200px",
+                border: "none",
                 borderRadius: "4px",
-                padding: "2px 6px 6px",
+              
               }}
-              textbutton={"Cập nhật"}
+              textButton={"Cập nhật"}
               styleTextButton={{
-                color: "#1791c8",
+                color: "#fff",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
             ></ButtonComponent>
           </WrapperInput>
           <WrapperInput>
-            <WrapperLabel htmlFor="phone">Phone</WrapperLabel>
+            <WrapperLabel htmlFor="phone">Phone </WrapperLabel>
             <InputForm
-              style={{ width: "300px" }}
-              id="email"
+              id={phone}
+              style={{ width: "500px" , height: '40px' }}
               value={phone}
               onChange={handleOnchangePhone}
             />
@@ -156,59 +160,26 @@ const ProfilePage = () => {
               onClick={handleUpdate}
               size={40}
               styleButton={{
-                height: "30px",
-                width: "fit-content",
+                background: "#1791c8",
+                height: "43px",
+                width: "200px",
+                border: "none",
                 borderRadius: "4px",
-                padding: "2px 6px 6px",
+
               }}
-              textbutton={"Cập nhật"}
+              textButton={"Cập nhật"}
               styleTextButton={{
-                color: "#1791c8",
+                color: "#fff",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
             ></ButtonComponent>
           </WrapperInput>
           <WrapperInput>
-            <WrapperLabel htmlFor="avatar">Avatar</WrapperLabel>
-            <WrapperUploadFile onChange={handleOnchangeAvatar} maxCount={1}>
-              <Button icon={<UploadOutlined />}>Select File</Button>
-            </WrapperUploadFile>
-            {avatar && (
-              <img
-                src={avatar}
-                style={{
-                  height: "60px",
-                  width: "60px",
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                }}
-                alt="avatar"
-              />
-            )}
-            {/* <InputForm style={{ width: '300px' }} id="avatar" value={avatar} onChange={handleOnchangeAvatar} /> */}
-            <ButtonComponent
-              onClick={handleUpdate}
-              size={40}
-              styleButton={{
-                height: "30px",
-                width: "fit-content",
-                borderRadius: "4px",
-                padding: "2px 6px 6px",
-              }}
-              textbutton={"Cập nhật"}
-              styleTextButton={{
-                color: "#1791c8",
-                fontSize: "15px",
-                fontWeight: "700",
-              }}
-            ></ButtonComponent>
-          </WrapperInput>
-          <WrapperInput>
-            <WrapperLabel htmlFor="address">Address</WrapperLabel>
+            <WrapperLabel htmlFor="address">Address </WrapperLabel>
             <InputForm
-              style={{ width: "300px" }}
-              id="address"
+              id={address}
+              style={{ width: "500px", height: '40px'  }}
               value={address}
               onChange={handleOnchangeAddress}
             />
@@ -216,16 +187,54 @@ const ProfilePage = () => {
               onClick={handleUpdate}
               size={40}
               styleButton={{
-                height: "30px",
-                width: "fit-content",
+                background: "#1791c8",
+                height: "43px",
+                width: "200px",
+                border: "none",
                 borderRadius: "4px",
-                padding: "2px 6px 6px",
               }}
               textButton={"Cập nhật"}
               styleTextButton={{
-                color: "#1791c8",
+                color: "#fff",
                 fontSize: "15px",
                 fontWeight: "700",
+              }}
+            ></ButtonComponent>
+          </WrapperInput>
+          <WrapperInput>
+            <WrapperLabel htmlFor="avatar">Avatar </WrapperLabel>
+            <WrapperUploadFile onChange={handleOnchangeAvatar} maxCount={1}>
+              <Button icon={<UploadOutlined />}>Select File</Button>
+            </WrapperUploadFile>
+            {avatar && (
+              <img src={avatar} style={{
+                height: '60px',
+                width: '60px',
+                borderRadius:'50%',
+                objectFit:'cover'
+              }}alt="avatar"/>
+            )}
+            {/* <InputForm
+              id={avatar}
+              style={{ width: "500px" }}
+              value={avatar}
+              onChange={handleOnchangeAvatar}
+            /> */}
+            <ButtonComponent
+              onClick={handleUpdate}
+              size={40}
+              styleButton={{
+                background: "#1791c8",
+                height: "40px",
+                width: "200px",
+                border: "none",
+                borderRadius: "4px",
+              }}
+              textButton={"Cập nhật"}
+              styleTextButton={{
+                color: "#fff",
+                fontSize: "15px",
+                fontWeight: "500"
               }}
             ></ButtonComponent>
           </WrapperInput>

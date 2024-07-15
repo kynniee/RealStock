@@ -63,7 +63,7 @@ export const WrapperRight = styled.div`
   align-items: center
 `
 
-export const WrapperInfo = styled.div`
+export const WrapperShipperMethod = styled.div`
   padding: 17px 20px;
   border-bottom: 1px solid #f5f5f5;
   background: #fff;
@@ -71,16 +71,22 @@ export const WrapperInfo = styled.div`
   border-top-left-radius: 6px;
   width: 100%
 `
+export const WrapperPaymentMethod = styled.div`
+  padding: 17px 20px;
+  border-bottom: 1px solid #f5f5f5;
+  background: #fff;
+  width: 100%
+`
 
 export const WrapperItemOrderInfo = styled.div`
   padding: 17px 20px;
   border-bottom: 1px solid #f5f5f5;
   background: #fff;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
 `
 
 export const WrapperTotal = styled.div`
@@ -93,7 +99,7 @@ export const WrapperTotal = styled.div`
     border-bottom-left-radius: 6px;
 `
 
-export const Lable = styled.span`
+export const Label = styled.span`
   font-size: 12px;
   color: #000;
   font-weight: bold

@@ -15,7 +15,7 @@ export const WrapperTextHeader = styled(Link)`
     color: #fff;
     font-weight: bold;
     text-align: left;
-    margin-left: 30px; 
+    margin-left: 10px; 
     &:hover {
         font-size: 18px;
         color: #fff;

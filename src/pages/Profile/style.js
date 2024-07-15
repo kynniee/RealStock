@@ -28,7 +28,7 @@ export const WrapperLabel = styled.label`
 
 export const WrapperInput = styled.div`
   display: flex;
-  align-items: cemter;
+  align-items: center;
   gap: 20px;
 `;
 

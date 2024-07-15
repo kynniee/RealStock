@@ -1,6 +1,6 @@
 import {Form, Radio } from 'antd'
 import React, { useCallback, useEffect, useState } from 'react'
-import { Lable, WrapperInfo, WrapperLeft, WrapperRadio, WrapperRight, WrapperTotal } from './style';
+import { Label, WrapperInfo, WrapperLeft, WrapperRadio, WrapperRight, WrapperTotal } from './style';
 
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import { useDispatch, useSelector } from 'react-redux';
@@ -245,12 +245,12 @@ const PaymentPage = () => {
     <div style={{background: '#f5f5fa', with: '100%', height: '100vh'}}>
       <Loading isPending={isPendingAddOrder}>
         <div style={{height: '100%', width: '1280px', margin: '0 auto'}}>
-          <h3>Thanh toán</h3>
+          <h3 style={{ color: '#1791c8' }}>Thanh toán</h3>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
             <WrapperLeft>
               <WrapperInfo>
                 <div>
-                  <Lable>Chọn phương thức giao hàng</Lable>
+                  <Label>Chọn phương thức giao hàng</Label>
                   <WrapperRadio onChange={handleDilivery} value={delivery}> 
                     <Radio  value="fast"><span style={{color: '#ea8500', fontWeight: 'bold'}}>FAST</span> Giao hàng tiết kiệm</Radio>
                     <Radio  value="gojek"><span style={{color: '#ea8500', fontWeight: 'bold'}}>GO_JEK</span> Giao hàng tiết kiệm</Radio>
@@ -259,7 +259,7 @@ const PaymentPage = () => {
               </WrapperInfo>
               <WrapperInfo>
                 <div>
-                  <Lable>Chọn phương thức thanh toán</Lable>
+                  <Label>Chọn phương thức thanh toán</Label>
                   <WrapperRadio onChange={handlePayment} value={payment}> 
                     <Radio value="later_money"> Thanh toán tiền mặt khi nhận hàng</Radio>
                     {/* <Radio value="paypal"> Thanh toán tiền bằng paypal</Radio> */}

@@ -80,8 +80,8 @@ const SignInPage = () => {
       <div style={{ width: '800px', height: '445px', borderRadius: '6px', background: '#fff', display: 'flex' }}>
         <WrapperContainerLeft>
           <h1>Xin chào</h1>
-          <p>Đăng nhập vào tạo tài khoản</p>
-          <InputForm style={{ marginBottom: '10px' }} placeholder="nhập email" value={email} onChange={handleOnchangeEmail} />
+          <p>Đăng nhập vào tài khoản</p>
+          <InputForm style={{ marginBottom: '10px' }} placeholder="Nhập email" value={email} onChange={handleOnchangeEmail} />
           <div style={{ position: 'relative' }}>
             <span
               onClick={() => setIsShowPassword(!isShowPassword)}
@@ -100,8 +100,8 @@ const SignInPage = () => {
               }
             </span>
             <InputForm
-              placeholder="mật khẩu"
-              type={isShowPassword ? "text" : "mật khẩu"}
+              placeholder="Nhập mật khẩu"
+              type={isShowPassword ? "text" : "password"}
               value={password}
               onChange={handleOnchangePassword}
             />
@@ -129,7 +129,6 @@ const SignInPage = () => {
         </WrapperContainerLeft>
         <WrapperContainerRight>
           <Image src={imageLogo} preview={false} alt="image-logo" height="203px" width="203px" />
-          <h4>Mua sắm tại LTTD</h4>
         </WrapperContainerRight>
       </div>
     </div >
