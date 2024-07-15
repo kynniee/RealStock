@@ -90,7 +90,7 @@ const ProfilePage = () => {
     });
   };
   return (
-    <div style={{ width: "1270px", margin: "0 auto", height: "500px" }}>
+    <div style={{ width: "1280px", margin: "0 auto", height: "500px" }}>
       <WrapperHeader>Thông tin người dùng</WrapperHeader>
       <Loading isPending={isPending}>
         <WrapperContentProfile>
@@ -113,7 +113,7 @@ const ProfilePage = () => {
               }}
               textButton={"Cập nhật"}
               styleTextButton={{
-                color: "rgb(26, 148, 255)",
+                color: "#1791c8",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
@@ -138,7 +138,7 @@ const ProfilePage = () => {
               }}
               textbutton={"Cập nhật"}
               styleTextButton={{
-                color: "rgb(26, 148, 255)",
+                color: "#1791c8",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
@@ -163,7 +163,7 @@ const ProfilePage = () => {
               }}
               textbutton={"Cập nhật"}
               styleTextButton={{
-                color: "rgb(26, 148, 255)",
+                color: "#1791c8",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
@@ -198,7 +198,7 @@ const ProfilePage = () => {
               }}
               textbutton={"Cập nhật"}
               styleTextButton={{
-                color: "rgb(26, 148, 255)",
+                color: "#1791c8",
                 fontSize: "15px",
                 fontWeight: "700",
               }}
@@ -223,7 +223,7 @@ const ProfilePage = () => {
               }}
               textButton={"Cập nhật"}
               styleTextButton={{
-                color: "rgb(26, 148, 255)",
+                color: "#1791c8",
                 fontSize: "15px",
                 fontWeight: "700",
               }}

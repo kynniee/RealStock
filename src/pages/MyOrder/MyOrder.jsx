@@ -85,7 +85,7 @@ const MyOrderPage = () => {
   return (
     <Loading isPending={isPending || isPendingCancel}>
       <WrapperContainer>
-        <div style={{height: '100%', width: '1270px', margin: '0 auto'}}>
+        <div style={{height: '100%', width: '1280px', margin: '0 auto'}}>
           <h4>Đơn hàng của tôi</h4>
           <WrapperListOrder>
             {data?.map((order) => {
@@ -116,11 +116,11 @@ const MyOrderPage = () => {
                         size={40}
                         styleButton={{
                             height: '36px',
-                            border: '1px solid #9255FD',
+                            border: '1px solid #1791c8',
                             borderRadius: '4px'
                         }}
                         textButton={'Hủy đơn hàng'}
-                        styleTextButton={{ color: '#9255FD', fontSize: '14px' }}
+                        styleTextButton={{ color: '#1791c8', fontSize: '14px' }}
                       >
                       </ButtonComponent>
                       <ButtonComponent
@@ -128,11 +128,11 @@ const MyOrderPage = () => {
                         size={40}
                         styleButton={{
                             height: '36px',
-                            border: '1px solid #9255FD',
+                            border: '1px solid #1791c8',
                             borderRadius: '4px'
                         }}
                         textButton={'Xem chi tiết'}
-                        styleTextButton={{ color: '#9255FD', fontSize: '14px' }}
+                        styleTextButton={{ color: '#1791c8', fontSize: '14px' }}
                       >
                       </ButtonComponent>
                     </div>

@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 export const WrapperSliderStyle = styled(Slider)`
     & .slick-arrow.slick-prev {
-  left: 12px;
+  left: 8px;
   top: 50%;
-  z-index: 10;
+  z-index: 1;
   &:before {
     font-size: 40px;
     color: #fff;
@@ -13,9 +13,9 @@ export const WrapperSliderStyle = styled(Slider)`
 }
 
 & .slick-arrow.slick-next {
-  right: 12px;
+  right: 26px;
   top: 50%;
-  z-index: 10;
+  z-index: 1;
   &:before {
     font-size: 40px;
     color: #fff;
@@ -28,7 +28,7 @@ export const WrapperSliderStyle = styled(Slider)`
   li {
     button {
       &:before {
-        color: rgb(255, 255, 0.5);
+        color: #ccc;
       }
     }
   }

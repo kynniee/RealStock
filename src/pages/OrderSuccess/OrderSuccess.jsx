@@ -1,5 +1,5 @@
 import React from 'react'
-import { Lable, WrapperInfo, WrapperContainer, WrapperValue, WrapperCountOrder, WrapperItemOrder, WrapperItemOrderInfo } from './style';
+import { Lable, WrapperInfo, WrapperContainer, WrapperValue, WrapperItemOrder, WrapperItemOrderInfo } from './style';
 import Loading from '../../components/LoadingComponent/Loading';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -13,7 +13,7 @@ const OrderSuccess = () => {
   return (
     <div style={{background: '#f5f5fa', with: '100%', height: '100vh'}}>
       <Loading isPending={false}>
-        <div style={{height: '100%', width: '1270px', margin: '0 auto'}}>
+        <div style={{height: '100%', width: '1280px', margin: '0 auto'}}>
           <h3>Đơn hàng đặt thành công</h3>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
             <WrapperContainer>

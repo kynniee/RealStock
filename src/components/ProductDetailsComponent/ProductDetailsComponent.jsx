@@ -113,7 +113,7 @@ const ProductDetailsComponent = ({idProduct}) => {
 
     return (
         <Loading isPending={isPending}>
-            <Row style={{ padding: '16px', background: '#fff', borderRadius: '4px', height:'100%' }}>
+            <Row style={{ padding: '16px', background: '#fff', borderRadius: '4px', height:'110%' }}>
                 <Col span={10} style={{ borderRight: '1px solid #e5e5e5', paddingRight: '8px' }}>
                     <Image src={productDetails?.image} alt="image product" preview={false} />
                     <Row style={{ paddingTop: '10px', justifyContent: 'space-between' }}>
@@ -210,7 +210,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                         ? "https://developers.facebook.com/docs/plugins/comments#configurator"
                         : window.location.href
                     } 
-                    width="1270" 
+                    width="1280" 
                 />
             </Row >
             

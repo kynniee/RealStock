@@ -1,5 +1,5 @@
 import {Form, Radio } from 'antd'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Lable, WrapperInfo, WrapperLeft, WrapperRadio, WrapperRight, WrapperTotal } from './style';
 
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import { removeAllOrderProduct } from '../../redux/slides/orderSlide';
 // import { PayPalButton } from "react-paypal-button-v2";
 import * as PaymentService from '../../services/PaymentService'
+import { useMutation } from '@tanstack/react-query';
 
 const PaymentPage = () => {
   const order = useSelector((state) => state.order)
@@ -243,7 +244,7 @@ const PaymentPage = () => {
   return (
     <div style={{background: '#f5f5fa', with: '100%', height: '100vh'}}>
       <Loading isPending={isPendingAddOrder}>
-        <div style={{height: '100%', width: '1270px', margin: '0 auto'}}>
+        <div style={{height: '100%', width: '1280px', margin: '0 auto'}}>
           <h3>Thanh toán</h3>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
             <WrapperLeft>
@@ -272,7 +273,7 @@ const PaymentPage = () => {
                   <div>
                     <span>Địa chỉ: </span>
                     <span style={{fontWeight: 'bold'}}>{ `${user?.address} ${user?.city}`} </span>
-                    <span onClick={handleChangeAddress} style={{color: '#9255FD', cursor:'pointer'}}>Thay đổi</span>
+                    <span onClick={handleChangeAddress} style={{color: '#1791c8', cursor:'pointer'}}>Thay đổi</span>
                   </div>
                 </WrapperInfo>
                 <WrapperInfo>

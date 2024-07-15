@@ -53,7 +53,7 @@ const TypeProductPage = () => {
           height: "calc(100vh - 64px)",
         }}
       >
-        <div style={{ width: "1270px", margin: "0 auto", height: "100%" }}>
+        <div style={{ width: "1280px", margin: "0 auto", height: "100%" }}>
           <Row
             style={{
               flexWrap: "nowrap",

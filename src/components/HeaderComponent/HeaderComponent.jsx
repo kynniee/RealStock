@@ -1,11 +1,14 @@
-import { Badge, Button, Col, Popover } from "antd";
+import { Badge, Button, Col, Image, Popover } from "antd";
 import React from "react";
+import imageLogo from '../../assets/images/logo.png'
 import {
   WrapperContentPopup,
   WrapperHeader,
   WrapperHeaderAccout,
+  WrapperLogoHeader,
   WrapperTextHeader,
   WrapperTextHeaderSmall,
+  
 } from "./style";
 import {
   UserOutlined,
@@ -98,10 +101,22 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
         heiht: "100%",
         width: "100%",
         display: "flex",
-        background: "#9255FD",
+        background: "linear-gradient(to right, #1791c8, #34d3fc)",
         justifyContent: "center",
       }}
     >
+      <a href = "/">
+
+     
+      <Image
+            style={{borderRadius: '50%', marginTop: ' 6px' , marginLeft: ' 24px ' }}
+            src={imageLogo}
+            preview={false}
+            alt="image-logo"
+            width="46px"
+            height="46px"
+           
+          /> </a>
       <WrapperHeader
         style={{
           justifyContent:
@@ -109,7 +124,7 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
         }}
       >
         <Col span={5}>
-          <WrapperTextHeader to="/">SHOP</WrapperTextHeader>
+          <WrapperTextHeader to="/">RealStock</WrapperTextHeader>
         </Col>
         {!isHiddenSearch && (
           <Col span={13}>
@@ -119,7 +134,7 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
               textButton="Tìm kiếm"
               placeholder="Nhập nội dung tìm kiếm"
               onChange={onSearch}
-              backgroundcolorbutton="#5a20c1"
+              backgroundcolorbutton="#1791c8"
             />
           </Col>
         )}
