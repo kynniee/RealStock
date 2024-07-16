@@ -89,3 +89,9 @@ export const WrapperParameter  = styled.div`
  display: inline-block;
  min-width: 526px;
 `;
+export const WrapperProducts = styled.div`
+    display: flex;
+    gap: 12px;
+    margin-top:0px;
+    flex-wrap: wrap;
+`

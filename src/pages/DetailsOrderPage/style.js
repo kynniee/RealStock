@@ -31,7 +31,8 @@ export const WrapperInfoUser = styled.div`
 
 export const WrapperLabel = styled.div`
   color: rgb(36, 36, 36);
-  font-size: 13px;
+  font-size: 15px;
+
   text-transform: uppercase;
   margin-bottom: 15px;
 `
@@ -48,12 +49,17 @@ export const WrapperStyleContent = styled.div`
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
 `
 
 export const WrapperProduct = styled.div`
   display:flex;
   align-items:flex-start;
-  margin-top: 10px;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
 `
 
 export const WrapperNameProduct = styled.div`
@@ -71,6 +77,7 @@ export const WrapperItem = styled.div`
 `
 export const WrapperItemLabel = styled.div`
   width: 200px;
+  margin-bottom:6px;
   &:last-child {
     font-weight: bold;
   }
@@ -79,5 +86,6 @@ export const WrapperItemLabel = styled.div`
 export const WrapperAllPrice = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end
+  align-items: flex-end;
+  margin: 6px 0
 `

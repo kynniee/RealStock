@@ -51,14 +51,30 @@ export const WrapperRight = styled.div`
   flex-direction: column; 
   gap: 10px; 
   align-items: center
-`
+  `
+  
+  export const WrapperInfoUp = styled.div`
+    padding: 17px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    background: #fff;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    width: 100%
+  `
+  
+  export const WrapperInfoMiddle = styled.div`
+    padding: 17px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    background: #fff;
+    width: 100%
+  `
 
-export const WrapperInfo = styled.div`
+export const WrapperInfoDown = styled.div`
   padding: 17px 20px;
   border-bottom: 1px solid #f5f5f5;
   background: #fff;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
   width: 100%
 `
 

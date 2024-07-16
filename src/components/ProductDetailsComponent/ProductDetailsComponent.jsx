@@ -365,29 +365,27 @@ const ProductDetailsComponent = ({ idProduct }) => {
         >
           <div class="similar-products">
             <h2>Sản phẩm tương tự</h2>
-            <ul>
-              <li>
-                <p>
-                  PC GVN x MSI Dragon X White (Intel i7-14700K/ VGA RTX 4080
-                  Super)
-                </p>
-                <span>73.990.000đ</span>
-              </li>
-              <li>
-                <p>
-                  PC GVN x ASUS Back to Future (Intel i5-14400F/ VGA RTX 4070
-                  Super)
-                </p>
-                <span>41.990.000đ</span>
-              </li>
-              <li>
-                <p>
-                  PC GVN x ASUS Back to Future (Intel i7-14700K/ VGA RTX 4070 Ti
-                  Super)
-                </p>
-                <span>69.990.000đ</span>
-              </li>
-            </ul>
+
+            {/* <WrapperProducts>
+              {products?.data?.map((product) => {
+                return (
+                  <CardComponent
+                    key={product._id}
+                    countInStock={product.countInStock}
+                    description={product.description}
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    rating={product.rating}
+                    type={product.type}
+                    selled={product.selled}
+                    discount={product.discount}
+                    id={product._id}
+                  />
+                );
+              })}
+            </WrapperProducts> */}
+
           </div>
         </Col>
       </Row>

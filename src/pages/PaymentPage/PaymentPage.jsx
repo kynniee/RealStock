@@ -1,6 +1,6 @@
 import {Form, Radio } from 'antd'
 import React, { useCallback, useEffect, useState } from 'react'
-import { Label, WrapperInfo, WrapperLeft, WrapperRadio, WrapperRight, WrapperTotal } from './style';
+import { Label, WrapperInfo, WrapperInfoDown, WrapperInfoMiddle, WrapperInfoUp, WrapperLeft, WrapperRadio, WrapperRight, WrapperTotal } from './style';
 
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
 import { useDispatch, useSelector } from 'react-redux';
@@ -248,7 +248,7 @@ const PaymentPage = () => {
           <h3 style={{ color: '#1791c8' }}>Thanh toán</h3>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
             <WrapperLeft>
-              <WrapperInfo>
+              <WrapperInfoUp>
                 <div>
                   <Label>Chọn phương thức giao hàng</Label>
                   <WrapperRadio onChange={handleDilivery} value={delivery}> 
@@ -256,8 +256,8 @@ const PaymentPage = () => {
                     <Radio  value="gojek"><span style={{color: '#ea8500', fontWeight: 'bold'}}>GO_JEK</span> Giao hàng tiết kiệm</Radio>
                   </WrapperRadio>
                 </div>
-              </WrapperInfo>
-              <WrapperInfo>
+              </WrapperInfoUp>
+              <WrapperInfoDown>
                 <div>
                   <Label>Chọn phương thức thanh toán</Label>
                   <WrapperRadio onChange={handlePayment} value={payment}> 
@@ -265,18 +265,18 @@ const PaymentPage = () => {
                     {/* <Radio value="paypal"> Thanh toán tiền bằng paypal</Radio> */}
                   </WrapperRadio>
                 </div>
-              </WrapperInfo>
+              </WrapperInfoDown>
             </WrapperLeft>
             <WrapperRight>
               <div style={{width: '100%'}}>
-                <WrapperInfo>
+                <WrapperInfoUp>
                   <div>
                     <span>Địa chỉ: </span>
                     <span style={{fontWeight: 'bold'}}>{ `${user?.address} ${user?.city}`} </span>
                     <span onClick={handleChangeAddress} style={{color: '#1791c8', cursor:'pointer'}}>Thay đổi</span>
                   </div>
-                </WrapperInfo>
-                <WrapperInfo>
+                </WrapperInfoUp>
+                <WrapperInfoMiddle>
                   <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                     <span>Tạm tính</span>
                     <span style={{color: '#000', fontSize: '14px', fontWeight: 'bold'}}>{convertPrice(priceMemo)}</span>
@@ -289,7 +289,7 @@ const PaymentPage = () => {
                     <span>Phí giao hàng</span>
                     <span style={{color: '#000', fontSize: '14px', fontWeight: 'bold'}}>{convertPrice(diliveryPriceMemo)}</span>
                   </div>
-                </WrapperInfo>
+                </WrapperInfoMiddle>
                 <WrapperTotal>
                   <span>Tổng tiền</span>
                   <span style={{display:'flex', flexDirection: 'column'}}>
