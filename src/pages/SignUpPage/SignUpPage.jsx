@@ -62,8 +62,8 @@ const SignUpPage = () => {
       <div style={{ width: '800px', height: '445px', borderRadius: '6px', background: '#fff', display: 'flex' }}>
         <WrapperContainerLeft>
           <h1>Xin chào</h1>
-          <p>Đăng nhập vào tạo tài khoản</p>
-          <InputForm style={{ marginBottom: '10px' }} placeholder="nhập email" value={email} onChange={handleOnchangeEmail} />
+          <p>Tạo  tài khoản tại đây</p>
+          <InputForm style={{ marginBottom: '10px' }} placeholder="Nhập email" value={email} onChange={handleOnchangeEmail} />
           <div style={{ position: 'relative' }}>
             <span
               onClick={() => setIsShowPassword(!isShowPassword)}
@@ -81,7 +81,7 @@ const SignUpPage = () => {
                 )
               }
             </span>
-            <InputForm placeholder="password" style={{ marginBottom: '10px' }} type={isShowPassword ? "text" : "password"}
+            <InputForm placeholder="Nhập mật khẩu" style={{ marginBottom: '10px' }} type={isShowPassword ? "text" : "password"}
               value={password} onChange={handleOnchangePassword} />
           </div>
           <div style={{ position: 'relative' }}>
@@ -101,7 +101,7 @@ const SignUpPage = () => {
                 )
               }
             </span>
-            <InputForm placeholder="comfirm password" type={isShowConfirmPassword ? "text" : "password"}
+            <InputForm placeholder="Nhập lại mật khẩu" type={isShowConfirmPassword ? "text" : "password"}
               value={confirmPassword} onChange={handleOnchangeConfirmPassword}
             />
           </div>
@@ -126,9 +126,11 @@ const SignUpPage = () => {
           <p>Bạn đã có tài khoản? <WrapperTextLight onClick={handleNavigateSignIn}> Đăng nhập</WrapperTextLight></p>
         </WrapperContainerLeft>
         <WrapperContainerRight>
+          <a href="/">
+         
           <Image src={imageLogo} preview={false} alt="image-logo" height="203px" width="203px" />
-          <h4>Mua sắm tại LTTD</h4>
-        </WrapperContainerRight>
+        
+         </a></WrapperContainerRight>
       </div>
     </div >
   )

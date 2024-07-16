@@ -14,11 +14,14 @@ import {jwtDecode} from "jwt-decode";
 import { useDispatch, useSelector } from 'react-redux'
 import { updateUser } from '../../redux/slides/UserSlide'
 
+
 const SignInPage = () => {
   const [isShowPassword, setIsShowPassword] = useState(false)
   const location = useLocation()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true); // initial state
+
   const dispatch = useDispatch();
   const user  = useSelector((state) => state.user)
 
@@ -109,7 +112,7 @@ const SignInPage = () => {
           {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
           <Loading isPending={isPending}>
             <ButtonComponent
-              disabled={!email.length || !password.length}
+              disabled={isButtonDisabled}
               onClick={handleSignIn}
               size={40}
               styleButton={{
@@ -127,9 +130,10 @@ const SignInPage = () => {
           <p><WrapperTextLight>Quên mật khẩu?</WrapperTextLight></p>
           <p>Chưa có tài khoản? <WrapperTextLight onClick={handleNavigateSignUp}> Tạo tài khoản</WrapperTextLight></p>
         </WrapperContainerLeft>
-        <WrapperContainerRight>
+        <WrapperContainerRight >
+          <a href="/">
           <Image src={imageLogo} preview={false} alt="image-logo" height="203px" width="203px" />
-        </WrapperContainerRight>
+       </a> </WrapperContainerRight>
       </div>
     </div >
   )

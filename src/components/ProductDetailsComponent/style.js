@@ -76,3 +76,16 @@ export const WrapperInputNumber = styled(InputNumber)`
     }
   }
 `;
+export const WrapperInfoName  = styled.div`
+ border: 1px solid #ddd;
+ padding: 8px;
+ background-color: #f2f2f2;
+ display: inline-block;
+ min-width: 86px;
+`;
+export const WrapperParameter  = styled.div`
+ border: 1px solid #ddd;
+ padding: 8px;
+ display: inline-block;
+ min-width: 526px;
+`;
