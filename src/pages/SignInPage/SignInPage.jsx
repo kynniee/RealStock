@@ -20,8 +20,6 @@ const SignInPage = () => {
   const location = useLocation()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true); // initial state
-
   const dispatch = useDispatch();
   const user  = useSelector((state) => state.user)
 
@@ -112,7 +110,7 @@ const SignInPage = () => {
           {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
           <Loading isPending={isPending}>
             <ButtonComponent
-              disabled={isButtonDisabled}
+              disabled={!email.length || !password.length}
               onClick={handleSignIn}
               size={40}
               styleButton={{

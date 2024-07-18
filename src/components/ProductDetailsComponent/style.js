@@ -95,3 +95,10 @@ export const WrapperProducts = styled.div`
     margin-top:0px;
     flex-wrap: wrap;
 `
+export const WrapperProduct = styled.div`
+  display:flex;
+  align-items:flex-start;
+  margin-top: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+`

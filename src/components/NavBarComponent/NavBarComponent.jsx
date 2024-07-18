@@ -1,13 +1,19 @@
 import { Checkbox, Col, Rate, Row } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import {
   WrapperContent,
   WrapperLabelText,
   WrapperTextPrice,
   WrapperTextValue,
+  WrapperTypeProduct,
 } from "./style";
+import TypeProduct from "../TypeProduct/TypeProduct";
+
+
+
 
 const NavBarComponent = () => {
+  const [typeProducts, setTypeProducts] = useState([]);
   const onChange = () => {};
   const renderContent = (type, options) => {
     switch (type) {
@@ -38,7 +44,7 @@ const NavBarComponent = () => {
       case "star":
         return options.map((option) => {
           return (
-            <div style={{ dispaly: "flex" }}>
+            <div style={{ display: "flex" }}>
               <Rate
                 style={{ fontSize: "12px" }}
                 disabled
@@ -59,12 +65,16 @@ const NavBarComponent = () => {
 
   return (
     <div>
-      <WrapperLabelText>Label</WrapperLabelText>
-      <WrapperContent>
-        {renderContent("text", ["Tu lanh", "TV", "MAYGIAT"])}
-      </WrapperContent>
+      <WrapperLabelText>Mục lục</WrapperLabelText>
+ 
+      <WrapperTypeProduct>
+          {typeProducts.map((item) => {
+            return <TypeProduct name={item} key={item} />;
+          })}
+        </WrapperTypeProduct>
+
     </div>
   );
 };
 
-export default NavBarComponent;
+export default NavBarComponent; 

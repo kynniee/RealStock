@@ -4,7 +4,7 @@ import { WrapperType } from "./style";
 
 const TypeProduct = ({ name }) => {
   const navigate = useNavigate();
-  const handleNavigatetype = (type) => {
+  const handleNavigateType = (type) => {
     navigate(
       `/product/${type
         .normalize("NFD")
@@ -14,7 +14,7 @@ const TypeProduct = ({ name }) => {
     );
   };
   return (
-    <WrapperType onClick={() => handleNavigatetype(name)}>{name}</WrapperType>
+    <WrapperType onClick={() => handleNavigateType(name)}>{name}</WrapperType>
   );
 };
 

@@ -16,6 +16,7 @@ import {
   WrapperBtnQualityProduct,
   WrapperInfoName,
   WrapperParameter,
+  WrapperProducts,
 } from "./style";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
@@ -31,12 +32,18 @@ import { useEffect } from "react";
 import * as message from "../Message/Message";
 import LikeButtonComponent from "../LikeButtonComponent/LikeButtonComponent";
 import CommentComponent from "../CommentComponent/CommentComponent";
-import { useMemo } from "react";
+
+import CardComponentInDetails from "../CardComponentInDetails/CardComponentInDetails";
+import { useDebounce } from "../../hooks/useDebounce";
+
 
 const ProductDetailsComponent = ({ idProduct }) => {
   const [numProduct, setNumProduct] = useState(1);
   const user = useSelector((state) => state.user);
   const order = useSelector((state) => state.order);
+  const [limit, setLimit] = useState(5);
+  const searchProduct = useSelector((state) => state?.product?.search);
+  const searchDebounce = useDebounce(searchProduct, 500);
   const [errorLimitOrder, setErrorLimitOrder] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -53,6 +60,24 @@ const ProductDetailsComponent = ({ idProduct }) => {
       return res.data;
     }
   };
+  const fetchProductAll = async (context) => {
+    const limit = context?.queryKey && context?.queryKey[1];
+    const search = context?.queryKey && context?.queryKey[2];
+    const res = await ProductService.getAllProduct(search, limit);
+
+    return res;
+  };
+  const {
+
+    data: products,
+    isPreviousData,
+  } = useQuery({
+    queryKey: ["products", limit, searchDebounce],
+    queryFn: fetchProductAll,
+    retry: 3,
+    retryDelay: 1000,
+    keepPreviousData: true,
+  });
 
   useEffect(() => {
     initFacebookSDK();
@@ -324,7 +349,7 @@ const ProductDetailsComponent = ({ idProduct }) => {
               <h2>Thông tin sản phẩm</h2>
               <Image src={imageProduct} style={{width:'600px', height:'430px'}} preview={false} ></Image>
             </div>
-            <div class="technical-specs">
+            <div >
               <h2>Thông số kỹ thuật</h2>
               <table style={{  width: '100%', borderCollapse: 'collapse'}}>
                 <tr style={{ display: 'flex'}}>
@@ -366,10 +391,10 @@ const ProductDetailsComponent = ({ idProduct }) => {
           <div class="similar-products">
             <h2>Sản phẩm tương tự</h2>
 
-            {/* <WrapperProducts>
+            <WrapperProducts>
               {products?.data?.map((product) => {
                 return (
-                  <CardComponent
+                  <CardComponentInDetails
                     key={product._id}
                     countInStock={product.countInStock}
                     description={product.description}
@@ -384,8 +409,10 @@ const ProductDetailsComponent = ({ idProduct }) => {
                   />
                 );
               })}
-            </WrapperProducts> */}
+            </WrapperProducts>
+            
 
+            
           </div>
         </Col>
       </Row>

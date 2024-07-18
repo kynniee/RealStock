@@ -239,6 +239,7 @@ const OrderPage = () => {
               />
             </WrapperStyleHeaderDilivery>
             <WrapperStyleHeader>
+              
               <span style={{ display: "inline-block", width: "390px" }}>
                 <CustomCheckbox
                   onChange={handleOnchangeCheckAll}
