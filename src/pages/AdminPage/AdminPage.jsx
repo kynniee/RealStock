@@ -12,7 +12,7 @@ import AdminProduct from "../../components/AdminProduct/AdminProduct";
 import OrderAdmin from "../../components/OrderAdmin/OrderAmin";
 import * as OrderService from "../../services/OrderService";
 import * as ProductService from "../../services/ProductService";
-import * as UserService from "../../services/UserService";
+import * as UserService from "../../services/UserService.js";
 
 import CustomizedContent from "./components/CustomizedContent";
 import { useSelector } from "react-redux";

@@ -4,7 +4,7 @@ import DefaultComponent from './components/DefaultComponent/DefaultComponent'
 import { routes } from './routers/index'
 import { isJsonString } from './utils'
 import {jwtDecode} from "jwt-decode";
-import * as UserService from './services/UserService'
+import * as UserService from './services/UserService.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { resetUser, updateUser } from './redux/slides/UserSlide'
 import Loading from './components/LoadingComponent/Loading'

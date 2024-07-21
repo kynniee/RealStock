@@ -7,7 +7,7 @@ import { Image } from 'antd'
 import { EyeFilled, EyeInvisibleFilled } from '@ant-design/icons'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import * as UserService from '../../services/UserService'
+import * as UserService from '../../services/UserService.js'
 import { useMutationHooks } from '../../hooks/useMutationHook'
 import Loading from '../../components/LoadingComponent/Loading'
 import {jwtDecode} from "jwt-decode";

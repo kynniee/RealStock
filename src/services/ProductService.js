@@ -1,5 +1,5 @@
 import axios from "axios"
-import { axiosJWT } from "./UserService"
+import { axiosJWT } from "./UserService.js"
 
 let res = {}
 export const getAllProduct = async (search, limit) => {

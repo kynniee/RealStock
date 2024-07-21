@@ -18,7 +18,7 @@ import {
 import ButttonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import * as UserService from "../../services/UserService";
+import * as UserService from "../../services/UserService.js";
 import { resetUser } from "../../redux/slides/UserSlide.js";
 import { useState } from "react";
 import Loading from "../LoadingComponent/Loading";

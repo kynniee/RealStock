@@ -9,7 +9,7 @@ import { useMemo } from 'react';
 import ModalComponent from '../../components/ModalComponent/ModalComponent';
 import InputComponent from '../../components/InputComponent/InputComponent';
 import { useMutationHooks } from '../../hooks/useMutationHook';
-import * as  UserService from '../../services/UserService'
+import * as  UserService from '../../services/UserService.js'
 import * as OrderService from '../../services/OrderService'
 import Loading from '../../components/LoadingComponent/Loading';
 import * as message from '../../components/Message/Message'

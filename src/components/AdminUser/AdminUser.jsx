@@ -13,7 +13,7 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useRef } from 'react'
 import { useMutationHooks } from '../../hooks/useMutationHook'
-import * as UserService from '../../services/UserService'
+import * as UserService from '../../services/UserService.js'
 import { useIsFetching, useQuery, useQueryClient } from '@tanstack/react-query'
 import { DeleteOutlined, EditOutlined, SearchOutlined } from '@ant-design/icons'
 

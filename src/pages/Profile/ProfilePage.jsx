@@ -11,7 +11,7 @@ import {
   WrapperLabel,
   WrapperUploadFile,
 } from "./style";
-import * as UserService from "../../services/UserService";
+import * as UserService from "../../services/UserService.js";
 import { useMutationHooks } from "../../hooks/useMutationHook";
 import Loading from "../../components/LoadingComponent/Loading";
 import * as message from "../../components/Message/Message";
