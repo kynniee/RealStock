@@ -32,22 +32,25 @@ const SignInPage = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      if(location?.state) {
-        navigate(location?.state)
-      }else {
-        navigate('/')
+      if (location?.state) {
+        navigate(location?.state);
+      } else {
+        navigate('/');
       }
-      localStorage.setItem('access_token', JSON.stringify(data?.access_token))
-      localStorage.setItem('refresh_token', JSON.stringify(data?.refresh_token))
+      localStorage.setItem('access_token', JSON.stringify(data?.access_token));
+      localStorage.setItem('refresh_token', JSON.stringify(data?.refresh_token));
       if (data?.access_token) {
-        const decoded = jwtDecode(data?.access_token)
+        const decoded = jwtDecode(data?.access_token);
         if (decoded?.id) {
-          handleGetDetailsUser(decoded?.id, data?.access_token)
+          handleGetDetailsUser(decoded?.id, data?.access_token);
         }
       }
     }
-  }, [isSuccess])
-
+    // Cleanup function (optional):
+    return () => {
+      // Cleanup logic here if needed
+    };
+  }, [isSuccess]);
   const handleGetDetailsUser = async (id, token) => {
     const storage = localStorage.getItem('refresh_token')
     const refreshToken = JSON.parse(storage)
